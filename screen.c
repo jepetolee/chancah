@@ -19,9 +19,9 @@ Color getRandomColor() {
 }
 
 enum ScreenState {
-    INITIAL, // ì²˜ìŒ í™”ë©´
-    FOUR_RECTS, // ì„ íƒì°½
-    NO_RECTS, // ê²Œì„í™”ë©´
+    INITIAL, // Ã³À½ È­¸é
+    FOUR_RECTS, // ¼±ÅÃÃ¢
+    NO_RECTS, // °ÔÀÓÈ­¸é
 };
 
 int main() {
@@ -82,14 +82,14 @@ int main() {
                 } 
             } 
         } 
-        // í™”ë©´ ìƒ‰ ì„¤ì • 
+        // È­¸é »ö ¼³Á¤ 
         SDL_SetRenderDrawColor(renderer, backgroundColor.r, backgroundColor.g, backgroundColor.b, 255); 
         SDL_RenderClear(renderer);
 
-        // í™”ë©´ë“¤
+        // È­¸éµé
         //switch (currentState) {
             //case INITIAL:
-                // ì²˜ìŒ í™”ë©´
+                // Ã³À½ È­¸é
                 SDL_Rect initialRect;
                 initialRect.x = WINDOW_WIDTH / 4;
                 initialRect.y = WINDOW_HEIGHT / 4;
@@ -99,7 +99,7 @@ int main() {
                 SDL_RenderDrawRect(renderer, &initialRect);
                 //break;
             //case FOUR_RECTS:
-                // ì„ íƒì°½
+                // ¼±ÅÃÃ¢
                 for (int i = 0;i<4;++i) {
                     SDL_Rect rect;
                     rect.x = 0;
@@ -111,7 +111,7 @@ int main() {
                 }
                 //break;
             //case NO_RECTS:
-                // ê²Œì„ í™”ë©´
+                // °ÔÀÓ È­¸é
                 //break;
         //}
         SDL_RenderPresent(renderer);

@@ -1,63 +1,55 @@
-#ifndef UTILS_H
+#pragma once
 #define UTILS_H
 
 #include "defs.h"
 
-/* main.hì— ì •ì˜ëœ ì „ì—­ ë³€ìˆ˜ ì‚¬ìš© */
-extern App app;
-extern Entity player[3];
-extern Entity game_over;
-extern Text score_board;
-extern char score_text[BUFSIZE];
-extern int score;
+/* main.h¿¡ Á¤ÀÇµÈ Àü¿ª º¯¼ö »ç¿ë */
+
 
 /**
- @brief ì£¼ì¸ê³µ í˜¹ì€ ì´ì•Œì´ ë²½ ë°–ìœ¼ë¡œ ë„˜ì–´ê°”ëŠ”ì§€ í™•ì¸
+ @brief ÁÖÀÎ°ø È¤Àº ÃÑ¾ËÀÌ º® ¹ÛÀ¸·Î ³Ñ¾î°¬´ÂÁö È®ÀÎ
 
- Entity ê°ì²´ê°€ ë²½ ë°–ìœ¼ë¡œ ë„˜ì–´ê°”ëŠ”ì§€ íŒì •í•œë‹¤.
+ Entity °´Ã¼°¡ º® ¹ÛÀ¸·Î ³Ñ¾î°¬´ÂÁö ÆÇÁ¤ÇÑ´Ù.
 
- @param[in] object íƒì§€ ëŒ€ìƒ Entityí˜• êµ¬ì¡°ì²´
+ @param[in] object Å½Áö ´ë»ó EntityÇü ±¸Á¶Ã¼
 
- @return ë²½ ë°–ìœ¼ë¡œ ë„˜ì–´ê°€ë©´ 1, ë²½ ì•ˆì— ìˆìœ¼ë©´ 0
+ @return º® ¹ÛÀ¸·Î ³Ñ¾î°¡¸é 1, º® ¾È¿¡ ÀÖÀ¸¸é 0
  @ingroup Utils
 */
-int CheckCollisionWall(Entity *object);
+//int CheckCollisionWall(Entity *collationObject);
 
 /**
- @brief ì£¼ì¸ê³µ í˜¹ì€ ì´ì•Œì´ ì–´ëŠ ë°©í–¥ ë²½ê³¼ ì¶©ëŒí–ˆëŠ”ì§€ í™•ì¸
+ @brief ÁÖÀÎ°ø È¤Àº ÃÑ¾ËÀÌ ¾î´À ¹æÇâ º®°ú Ãæµ¹Çß´ÂÁö È®ÀÎ
 
- ê³µì´ íŠ•ê¸°ëŠ” ë¬¼ë¦¬ì—”ì§„ì„ êµ¬í˜„í•˜ê¸° ìœ„í•´, Entity ê°ì²´ê°€ ì–´ëŠ ìª½ ë²½ê³¼ ì¶©ëŒí–ˆëŠ”ì§€ í™•ì¸í•œë‹¤.
+ °øÀÌ Æ¨±â´Â ¹°¸®¿£ÁøÀ» ±¸ÇöÇÏ±â À§ÇØ, Entity °´Ã¼°¡ ¾î´À ÂÊ º®°ú Ãæµ¹Çß´ÂÁö È®ÀÎÇÑ´Ù.
 
- @param[in] object íƒì§€ ëŒ€ìƒ Entityí˜• êµ¬ì¡°ì²´
+ @param[in] object Å½Áö ´ë»ó EntityÇü ±¸Á¶Ã¼
 
  @return
-       ë¶€ë”«í˜ì´ ì—†ìœ¼ë©´ 0
-       ì™¼ìª½ ë²½ê³¼ ë¶€ë”«íˆë©´ \ref LEFT_WALL
-       ì˜¤ë¥¸ìª½ ë²½ê³¼ ë¶€ë”«íˆë©´ \ref RIGHT_WALL
-       ìœ„ ë²½ê³¼ ë¶€ë”«íˆë©´ \ref TOP_WALL
-       ì•„ë˜ ë²½ê³¼ ë¶€ë”«íˆë©´ \ref BOTTOM_WALL
+       ºÎ‹HÈûÀÌ ¾øÀ¸¸é 0
+       ¿ŞÂÊ º®°ú ºÎ‹HÈ÷¸é \ref LEFT_WALL
+       ¿À¸¥ÂÊ º®°ú ºÎ‹HÈ÷¸é \ref RIGHT_WALL
+       À§ º®°ú ºÎ‹HÈ÷¸é \ref TOP_WALL
+       ¾Æ·¡ º®°ú ºÎ‹HÈ÷¸é \ref BOTTOM_WALL
  @ingroup Utils
 */
-int CheckCollisionSide(Entity *object);
+//int CheckCollisionSide(Entity *collationObject);
 
 /**
- @brief ë‘ Entity ê°„ ì¶©ëŒ ì—¬ë¶€ë¥¼ íŒë‹¨
+ @brief µÎ Entity °£ Ãæµ¹ ¿©ºÎ¸¦ ÆÇ´Ü
 
- ë‘ Entity ê°„ ì¶©ëŒ ì—¬ë¶€ë¥¼ íŒë‹¨í•œë‹¤. \ref Entity.pos ëŠ” SDL2 ë¼ì´ë¸ŒëŸ¬ë¦¬ì—ì„œ
- ì •ì˜í•œ SDL_Rect êµ¬ì¡°ì²´ì´ë‹¤. ì´ êµ¬ì¡°ì²´ëŠ” ë©¤ë²„ ë³€ìˆ˜ë¡œ (x, y)ì¢Œí‘œì™€ (w, h)
- ë„ˆë¹„/ë†’ì´ ìŒì„ ê°€ì§„ë‹¤. (x, y)ëŠ” ì´ˆê¸°í™” ê³¼ì • ë˜ëŠ” \ref Action ëª¨ë“ˆì—ì„œ ë£¨í”„ë§ˆë‹¤
- ê³„ì‚°ë˜ë©° (w, h)ëŠ” \ref Draw ëª¨ë“ˆì—ì„œ í…ìŠ¤ì³ ì •ë³´ë¥¼ ë°”íƒ•ìœ¼ë¡œ ê³„ì‚°ëœë‹¤. SDL2ì—ì„œ
- ì œê³µí•˜ëŠ” SDL_HasIntersection í•¨ìˆ˜ë¥¼ ì´ìš©í•˜ì—¬ ë‘ ê°œì˜ SDL_Rect êµ¬ì¡°ì²´ì— êµì§‘í•©ì´
- ìˆëŠ”ì§€ íŒë³„í•˜ëŠ” ë°©ë²•ìœ¼ë¡œ ì¶©ëŒì„ ê³„ì‚°í•œë‹¤.
+ µÎ Entity °£ Ãæµ¹ ¿©ºÎ¸¦ ÆÇ´ÜÇÑ´Ù. \ref Entity.pos ´Â SDL2 ¶óÀÌºê·¯¸®¿¡¼­
+ Á¤ÀÇÇÑ SDL_Rect ±¸Á¶Ã¼ÀÌ´Ù. ÀÌ ±¸Á¶Ã¼´Â ¸â¹ö º¯¼ö·Î (x, y)ÁÂÇ¥¿Í (w, h)
+ ³Êºñ/³ôÀÌ ½ÖÀ» °¡Áø´Ù. (x, y)´Â ÃÊ±âÈ­ °úÁ¤ ¶Ç´Â \ref Action ¸ğµâ¿¡¼­ ·çÇÁ¸¶´Ù
+ °è»êµÇ¸ç (w, h)´Â \ref Draw ¸ğµâ¿¡¼­ ÅØ½ºÃÄ Á¤º¸¸¦ ¹ÙÅÁÀ¸·Î °è»êµÈ´Ù. SDL2¿¡¼­
+ Á¦°øÇÏ´Â SDL_HasIntersection ÇÔ¼ö¸¦ ÀÌ¿ëÇÏ¿© µÎ °³ÀÇ SDL_Rect ±¸Á¶Ã¼¿¡ ±³ÁıÇÕÀÌ
+ ÀÖ´ÂÁö ÆÇº°ÇÏ´Â ¹æ¹ıÀ¸·Î Ãæµ¹À» °è»êÇÑ´Ù.
 
- @param[in] object_a ì¶©ëŒ ì—¬ë¶€ë¥¼ íŒë‹¨í•  ì²« ë²ˆì§¸ Entity êµ¬ì¡°ì²´
- @param[in] object_b ì¶©ëŒ ì—¬ë¶€ë¥¼ íŒë‹¨í•  ë‘ ë²ˆì§¸ Entity êµ¬ì¡°ì²´
+ @param[in] object_a Ãæµ¹ ¿©ºÎ¸¦ ÆÇ´ÜÇÒ Ã¹ ¹øÂ° Entity ±¸Á¶Ã¼
+ @param[in] object_b Ãæµ¹ ¿©ºÎ¸¦ ÆÇ´ÜÇÒ µÎ ¹øÂ° Entity ±¸Á¶Ã¼
 
- @return ì¶©ëŒí–ˆìœ¼ë©´ 1, ì¶©ëŒí•˜ì§€ ì•Šì•˜ìœ¼ë©´ 0
+ @return Ãæµ¹ÇßÀ¸¸é 1, Ãæµ¹ÇÏÁö ¾Ê¾ÒÀ¸¸é 0
  @ingroup Utils
 */
-int CheckCollisionObjects(Entity *object_a, Entity *object_b);
+//int CheckCollisionObjects(Entity *collationObjectA, Entity *collationObjectB);
 
-
-
-#endif
