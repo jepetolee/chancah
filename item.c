@@ -1,4 +1,4 @@
-/*¾ÆÀÌÅÛ Á¤ÀÇ 1¹ø  ¼Óµµ ¾ÆÀÌÅÛ 2¹ø Å©±âÄ¿Áö±â ¾ÆÀÌÅÛ ¼ÂÂ° ÇÑ°ñ³ÖÀ¸¸é µÎ¹è*/
+/*ì•„ì´í…œ ì •ì˜ 1ë²ˆ  ì†ë„ ì•„ì´í…œ 2ë²ˆ í¬ê¸°ì»¤ì§€ê¸° ì•„ì´í…œ ì…‹ì§¸ í•œê³¨ë„£ìœ¼ë©´ ë‘ë°°*/
 #include "item.h"
 #include <stdio.h>
 #define ITEM_WIDTH 20
@@ -28,8 +28,8 @@ int checkitemFunctionTwo(){
 }
 
 void itemFunctionTwo(int j){
-      player[j].pos.x+player_width*1.2;
-      player[j].pos.y+player_Height*1.2;
+      player[j].pos.x+player[j].pos.w*1.2;
+      player[j].pos.y+player[j].pos.h*1.2;
 }
 int checkitemFunctionThree(){
 int determinant=0;
@@ -51,7 +51,7 @@ void initializeItem(){
 }
 
 
-int main(){
+void itemtotal(){
    int i=rand()%640;
    int j=rand()%410;
    void initializeItem();
