@@ -6,6 +6,6 @@
 #include "utils.h"
 #include <stdio.h>
 
-extern Entity player[BUFSIZE];
+void player3item(void);
 
 #endif
