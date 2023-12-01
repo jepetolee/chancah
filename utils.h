@@ -1,55 +1,22 @@
-#pragma once
+#ifndef UTILS_H
 #define UTILS_H
 
 #include "defs.h"
 
-/* main.h¿¡ Á¤ÀÇµÈ Àü¿ª º¯¼ö »ç¿ë */
+/* main.hì— ì •ì˜ëœ ì „ì—­ ë³€ìˆ˜ ì‚¬ìš© */
+extern App app;
+extern Entity player[3];
+extern Entity game_over;
+extern Text score_board;
+extern char score_text[BUFSIZE];
+extern int score;
+int CheckCollisionWall(Entity *object);
+int CheckCollisionObjects(Entity *object_a, Entity *object_b);
+int CheckCollisionSide(Entity *object);
+int CheckCollisionObjects(Entity *object_a, Entity *object_b);
+int CheckCollisionObject(Entity *object_a, Item *object_b)
 
 
-/**
- @brief ÁÖÀÎ°ø È¤Àº ÃÑ¾ËÀÌ º® ¹ÛÀ¸·Î ³Ñ¾î°¬´ÂÁö È®ÀÎ
 
- Entity °´Ã¼°¡ º® ¹ÛÀ¸·Î ³Ñ¾î°¬´ÂÁö ÆÇÁ¤ÇÑ´Ù.
 
- @param[in] object Å½Áö ´ë»ó EntityÇü ±¸Á¶Ã¼
-
- @return º® ¹ÛÀ¸·Î ³Ñ¾î°¡¸é 1, º® ¾È¿¡ ÀÖÀ¸¸é 0
- @ingroup Utils
-*/
-//int CheckCollisionWall(Entity *collationObject);
-
-/**
- @brief ÁÖÀÎ°ø È¤Àº ÃÑ¾ËÀÌ ¾î´À ¹æÇâ º®°ú Ãæµ¹Çß´ÂÁö È®ÀÎ
-
- °øÀÌ Æ¨±â´Â ¹°¸®¿£ÁøÀ» ±¸ÇöÇÏ±â À§ÇØ, Entity °´Ã¼°¡ ¾î´À ÂÊ º®°ú Ãæµ¹Çß´ÂÁö È®ÀÎÇÑ´Ù.
-
- @param[in] object Å½Áö ´ë»ó EntityÇü ±¸Á¶Ã¼
-
- @return
-       ºÎ‹HÈûÀÌ ¾øÀ¸¸é 0
-       ¿ŞÂÊ º®°ú ºÎ‹HÈ÷¸é \ref LEFT_WALL
-       ¿À¸¥ÂÊ º®°ú ºÎ‹HÈ÷¸é \ref RIGHT_WALL
-       À§ º®°ú ºÎ‹HÈ÷¸é \ref TOP_WALL
-       ¾Æ·¡ º®°ú ºÎ‹HÈ÷¸é \ref BOTTOM_WALL
- @ingroup Utils
-*/
-//int CheckCollisionSide(Entity *collationObject);
-
-/**
- @brief µÎ Entity °£ Ãæµ¹ ¿©ºÎ¸¦ ÆÇ´Ü
-
- µÎ Entity °£ Ãæµ¹ ¿©ºÎ¸¦ ÆÇ´ÜÇÑ´Ù. \ref Entity.pos ´Â SDL2 ¶óÀÌºê·¯¸®¿¡¼­
- Á¤ÀÇÇÑ SDL_Rect ±¸Á¶Ã¼ÀÌ´Ù. ÀÌ ±¸Á¶Ã¼´Â ¸â¹ö º¯¼ö·Î (x, y)ÁÂÇ¥¿Í (w, h)
- ³Êºñ/³ôÀÌ ½ÖÀ» °¡Áø´Ù. (x, y)´Â ÃÊ±âÈ­ °úÁ¤ ¶Ç´Â \ref Action ¸ğµâ¿¡¼­ ·çÇÁ¸¶´Ù
- °è»êµÇ¸ç (w, h)´Â \ref Draw ¸ğµâ¿¡¼­ ÅØ½ºÃÄ Á¤º¸¸¦ ¹ÙÅÁÀ¸·Î °è»êµÈ´Ù. SDL2¿¡¼­
- Á¦°øÇÏ´Â SDL_HasIntersection ÇÔ¼ö¸¦ ÀÌ¿ëÇÏ¿© µÎ °³ÀÇ SDL_Rect ±¸Á¶Ã¼¿¡ ±³ÁıÇÕÀÌ
- ÀÖ´ÂÁö ÆÇº°ÇÏ´Â ¹æ¹ıÀ¸·Î Ãæµ¹À» °è»êÇÑ´Ù.
-
- @param[in] object_a Ãæµ¹ ¿©ºÎ¸¦ ÆÇ´ÜÇÒ Ã¹ ¹øÂ° Entity ±¸Á¶Ã¼
- @param[in] object_b Ãæµ¹ ¿©ºÎ¸¦ ÆÇ´ÜÇÒ µÎ ¹øÂ° Entity ±¸Á¶Ã¼
-
- @return Ãæµ¹ÇßÀ¸¸é 1, Ãæµ¹ÇÏÁö ¾Ê¾ÒÀ¸¸é 0
- @ingroup Utils
-*/
-//int CheckCollisionObjects(Entity *collationObjectA, Entity *collationObjectB);
-
+#endif
