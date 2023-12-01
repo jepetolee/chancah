@@ -1,6 +1,5 @@
 #ifndef ACTION_H
 #define ACTION_H
-
 #define ITEM_WIDTH 20
 #define ITEM_HEIGHT 20
 #include <stdlib.h>
