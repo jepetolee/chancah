@@ -2,23 +2,23 @@
 
 void elasticCollision2D(Entity *object1, Entity *object2) {
 
-    // ìƒëŒ€ ì†ë„ ê³„ì‚°
+    // »ó´ë ¼Óµµ °è»ê
     Entity relative_velocity;
     relative_velocity.pos.x = object2->v_x - object1->v_x;
     relative_velocity.pos.y = object2->v_y - object1->v_y;
 
-    // ì¶©ëŒ ê°ë„ ë° ì½”ì‚¬ì¸, ì‚¬ì¸ ê³„ì‚°
+    // Ãæµ¹ °¢µµ ¹× ÄÚ»çÀÎ, »çÀÎ °è»ê
     float collision_angle = atan2(relative_velocity.v_y, relative_velocity.v_x);
     float cos_collision_angle = cos(collision_angle);
     float sin_collision_angle = sin(collision_angle);
 
-    // íƒ„ì„± ì¶©ëŒ ê³µì‹ì„ ì‚¬ìš©í•˜ì—¬ ìµœì¢… ì†ë„ ê³„ì‚°
+    // Åº¼º Ãæµ¹ °ø½ÄÀ» »ç¿ëÇÏ¿© ÃÖÁ¾ ¼Óµµ °è»ê
     float v1_final_x = ((object1->mass - object2->mass) * object1->v_x + 2 * object2->mass * object2->v_x) / (object1->mass + object2->mass);
     float v1_final_y = ((object1->mass - object2->mass) * object1->v_y + 2 * object2->mass * object2->v_y) / (object1->mass + object2->mass);
 
     float v2_final_x = ((object2->mass - object1->mass) * object2->v_x + 2 * object1->mass * object1->v_x) / (object1->mass + object2->mass);
     float v2_final_y = ((object2->mass - object1->mass) * object2->v_y + 2 * object1->mass * object1->v_y) / (object1->mass + object2->mass);
-    // ìµœì¢… ì†ë„ ì„¤ì •
+    // ÃÖÁ¾ ¼Óµµ ¼³Á¤
     object1->v_x = v1_final_x;
     object1->v_y = v1_final_y;
 
@@ -28,19 +28,19 @@ void elasticCollision2D(Entity *object1, Entity *object2) {
 
 
 void Act(void) {
-    /*ê³µì´ ê³¨ëŒ€ ìœ„ì— ìœ„ì¹˜í• ë•Œ*/
+    /*°øÀÌ °ñ´ë À§¿¡ À§Ä¡ÇÒ¶§*/
     if((LGoalnet.pos.x<BALL.pos.x && BALL.pos.x<LGoalnet.pos.x+Goal_net_width) &&( BALL.pos.y <LGoalnet.pos.y-Goal_net_height
     && BALL.pos.y<RGoalnet.pos.y-Goal_net_height )&& (BALL.pos.x>RGoalnet.pos.x&&BALL.pos.x<RGoalnet.pos.x+Goal_net_width)){
         BALL.pos.x=320;
         BALL.pos.y=160;
     }
-    /*ê³µê³¼ ì„ ìˆ˜ê°€ ë¶€ë”«í˜”ì„ë•Œ*/
+    /*°ø°ú ¼±¼ö°¡ ºÎ‹HÇûÀ»¶§*/
     for(int i=0;i<BUFSIZE;i++){
     if(CheckCollisionObjects(&BALL,&(player[i]))){
         elasticCollision2D(&BALL,&(player[i]));   
     }
     }
-    /*ê³µê³¼ ê²½ê¸°ì¥ì´ ë¶€ë”«í˜”ì„ë•Œ*/
+    /*°ø°ú °æ±âÀåÀÌ ºÎ‹HÇûÀ»¶§*/
     if((BALL.pos.x==0 && (BALL.pos.y>0 && BALL.pos.y<410)) ||((BALL.pos.x>0 && BALL.pos.x<640 ) && BALL.pos.y==0) 
     ||(BALL.pos.x==640 && (BALL.pos.y>0 && BALL.pos.y<410))){
         switch (CheckCollisionSide(&BALL)) {
@@ -65,4 +65,4 @@ void Act(void) {
     }
     
 }
-}
+

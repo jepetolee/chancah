@@ -5,7 +5,7 @@ int main(void) {
 
     srand(time(NULL));
 
-    /* 1. ì´ˆê¸°í™” */
+    /* 1. ÃÊ±âÈ­ */
     InitMemorySet();
     InitSDL();
     InitTTF();
@@ -16,29 +16,29 @@ int main(void) {
     InitSound();
     LoadSound();
 
-    /* BGMì€ ê³„ì† ìž¬ìƒë˜ë¯€ë¡œ ë£¨í”„ ë°–ì—ì„œ ìž¬ìƒ */
+    /* BGMÀº °è¼Ó Àç»ýµÇ¹Ç·Î ·çÇÁ ¹Û¿¡¼­ Àç»ý */
     PlayBGM();
 
-    /* 2. í”„ë¡œê·¸ëž¨ ë¬´í•œ ë£¨í”„ */
+    /* 2. ÇÁ·Î±×·¥ ¹«ÇÑ ·çÇÁ */
     for (;;) {
-        /* (1) ë¹ˆ í™”ë©´ ë§Œë“¤ê¸° */
+        /* (1) ºó È­¸é ¸¸µé±â */
         ClearWindow();
 
-        Drawstart()
+        Drawstart();
 
         click1(){
-            ê°€ìš´ë°ë¶€ë¶„ë§Œ ì¸ì‹.
+            °¡¿îµ¥ºÎºÐ¸¸ ÀÎ½Ä.
         }
 
         WindowChoice()
 
         click2(){
-            3ì¤„ë¡œ ë‚˜ëˆ ì„œ ì¸ìžê°’ ë”°ë¡œ ë°›ì•„ì•¼í•¨.
-            2ë²ˆë°›ì•„ì•¼ ë‹¤ìŒí™”ë©´ ë„˜ì–´ê°€ê¸°.
+            3ÁÙ·Î ³ª´²¼­ ÀÎÀÚ°ª µû·Î ¹Þ¾Æ¾ßÇÔ.
+            2¹ø¹Þ¾Æ¾ß ´ÙÀ½È­¸é ³Ñ¾î°¡±â.
         }
 
         WindowGameSetting(){
-            3,5,7,9ì¹¸ ë†“ê³ ì„œ ëª‡ê³¨ì´ ëì¼ì§€ ì„ íƒ
+            3,5,7,9Ä­ ³õ°í¼­ ¸î°ñÀÌ ³¡ÀÏÁö ¼±ÅÃ
         }
     
 
@@ -50,11 +50,11 @@ int main(void) {
         InitBall()
         Initgoaldae()
         Initscoreboard()
-        ì ìˆ˜íŒì´ ë‹¤ ì´ˆê¸°í™”ê°€ ë˜ì—ˆì–´ì•¼í•´.
-        ì´ˆê¸°í™” ë°©ì‹ì´ ì ìˆ˜ê°€ ì–´ë–¤ ë³€ìˆ˜ë¡œ ë“¤ì–´ê°€ìžˆê³ ,
-        if(ê³µì´ ë“¤ì–´ê°€ë©´){
+        Á¡¼öÆÇÀÌ ´Ù ÃÊ±âÈ­°¡ µÇ¾ú¾î¾ßÇØ.
+        ÃÊ±âÈ­ ¹æ½ÄÀÌ Á¡¼ö°¡ ¾î¶² º¯¼ö·Î µé¾î°¡ÀÖ°í,
+        if(°øÀÌ µé¾î°¡¸é){
             while(3 != score){
-            ì ìˆ˜ì¸ ë³€ìˆ˜ê°€ ì¹´ìš´íŠ¸ê°€ í•˜ë‚˜ ì˜¬ë¼ê°€ê³ 
+            Á¡¼öÀÎ º¯¼ö°¡ Ä«¿îÆ®°¡ ÇÏ³ª ¿Ã¶ó°¡°í
             Drawgame()
             }
         }
@@ -68,28 +68,28 @@ int main(void) {
         InitBall()
         Initgoaldae()
         Initscoreboard()
-        ì ìˆ˜íŒì´ ë‹¤ ì´ˆê¸°í™”ê°€ ë˜ì—ˆì–´ì•¼í•´.
-        ì´ˆê¸°í™” ë°©ì‹ì´ ì ìˆ˜ê°€ ì–´ë–¤ ë³€ìˆ˜ë¡œ ë“¤ì–´ê°€ìžˆê³ ,
-        if(ê³µì´ ë“¤ì–´ê°€ë©´){
+        Á¡¼öÆÇÀÌ ´Ù ÃÊ±âÈ­°¡ µÇ¾ú¾î¾ßÇØ.
+        ÃÊ±âÈ­ ¹æ½ÄÀÌ Á¡¼ö°¡ ¾î¶² º¯¼ö·Î µé¾î°¡ÀÖ°í,
+        if(°øÀÌ µé¾î°¡¸é){
             while(5 != score){
-            ì ìˆ˜ì¸ ë³€ìˆ˜ê°€ ì¹´ìš´íŠ¸ê°€ í•˜ë‚˜ ì˜¬ë¼ê°€ê³ 
+            Á¡¼öÀÎ º¯¼ö°¡ Ä«¿îÆ®°¡ ÇÏ³ª ¿Ã¶ó°¡°í
             Drawgame()
             }
         }
     }
     break;
 
-    if(ì ìˆ˜íŒ ë¹„êµ)
+    if(Á¡¼öÆÇ ºñ±³)
             Draw1pwin(){
-                ê°€ìš´ë°ì— 1pwin ê·¸ ë°‘ì— ì‚¬ê°í˜• ì´ë¯¸ì§€ íŒŒì¼ë¡œ Press R
+                °¡¿îµ¥¿¡ 1pwin ±× ¹Ø¿¡ »ç°¢Çü ÀÌ¹ÌÁö ÆÄÀÏ·Î Press R
             }
         else
             Draw2pwin()
 
-        /* (4) í™”ë©´ ë³´ì—¬ì£¼ê¸° */
+        /* (4) È­¸é º¸¿©ÁÖ±â */
         ShowWindow();
 
-        /* ì¼ì • ì‹œê°„ ëŒ€ê¸° (60FPS ê¸°ì¤€ í•œ í”„ë ˆìž„ì— 16ms) */
+        /* ÀÏÁ¤ ½Ã°£ ´ë±â (60FPS ±âÁØ ÇÑ ÇÁ·¹ÀÓ¿¡ 16ms) */
         SDL_Delay(16);
     }
 
