@@ -17,17 +17,20 @@
 
 /*상수 매크로 정의*/
 #define FPS 60              /**< 게임 FPS*/
-#define BUFSIZE 3        /**< 문자열 버퍼 크기*/
+#define BUFSIZE 1024
+#define BUFSIZE2 3
 #define field_height 410
 #define field_width 640
+#define player1_width 85
+#define player1_height 90
+#define player2_width 100
+#define player2_height 105
 #define SCREEN_WIDTH 640    /**< 화면 너비(픽셀)*/
 #define SCREEN_HEIGHT 480   /**< 화면 높이(픽셀)*/
 #define Goal_net_width 120
-#define Goal_net_height 150
+#define Goal_net_height 180
 #define ITEM_WIDTH 20
 #define ITEM_HEIGHT 20
-#define player_width 85
-#define player_Height 90
 #define PLAYER_SPEED 3      /**< 플레이어 객체 속도(단위시간당 이동량)*/
 #define PLAYER_SPEED2 5
 #define BALL_width 10
@@ -39,8 +42,6 @@
 #define RIGHT_WALL 2        /**< 충돌 판정 시 오른쪽 벽을 나타내는 상수*/
 #define TOP_WALL 3          /**< 충돌 판정 시 위쪽 벽을 나타내는 상수*/
 #define BOTTOM_WALL 4       /**< 충돌 판정 시 아래쪽 벽을 나타내는 상수*/
-#define ITEM_WIDTH 20
-#define ITEM_HEIGHT 20
 
 
 /*구조체 정의*/
@@ -112,23 +113,5 @@ extern Entity field;
 extern Entity LGoalnet;
 extern Entity RGoalnet;
 extern Item items[3];
-BALL.pos.w=BALL_width;
-BALL.pos.h=BALL_height;
-LGoalnet.pos.w=Goal_net_width ;
-LGoalnet.pos.h=Goal_net_height;
-RGoalnet.pos.w=Goal_net_width ;
-RGoalnet.pos.h=Goal_net_height;
-player[0].pos.w=79;
-player[0].pos.h=87;
-player[1].pos.w=74;
-player[1].pos.h=84;
-player[2].pos.w=88;
-player[2].pos.h=84;
-items[0].pos.w=ITEM_WIDTH;
-items[0].pos.h=ITEM_HEIGHT
-items[1].pos.w=ITEM_WIDTH;
-items[1].pos.h=ITEM_HEIGHT;
-items[2].pos.w=ITEM_WIDTH;
-items[2].pos.h=ITEM_HEIGHT;
 void elasticCollision2D(Entity *object1, Entity *object2);
 #endif
