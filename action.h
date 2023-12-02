@@ -7,7 +7,6 @@
 #include "gravity.h"
 #include "main.h"
 #include "collision.h"
-#include "input.h"
 #include "item.h"
 #include "main.h"
 #include "utils.h"
@@ -16,8 +15,8 @@
 extern char score_text[BUFSIZE];
 extern int score;
 void ActGame(int i);
-void ActGameOver(void) ;
-void ActCheckgoal(void);
+void ActGameOver(void);
+int ActCheckgoal(void);
 void ActPlayer(int i);
 void ActScoreBoard(void);
 void ActFinalScoreBoard(void);
