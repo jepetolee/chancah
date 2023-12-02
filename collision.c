@@ -1,5 +1,5 @@
+#include "collision.h"
 void elasticCollision2D(Entity *object1, Entity *object2) {
-
     // 상대 속도 계산
     Entity relative_velocity;
     relative_velocity.v_x = object2->v_x - object1->v_x;
@@ -33,7 +33,7 @@ void Act(void) {
         BALL.pos.y=160;
     }
     /*공과 선수가 부딫혔을때*/
-    for(int i=0;i<BUFSIZE;i++){
+    for(int i=0;i<BUFSIZE2;i++){
     if(CheckCollisionObjects(&BALL,&(player[i]))){
         elasticCollision2D(&BALL,&(player[i]));   
     }
@@ -61,7 +61,3 @@ void Act(void) {
                 default:
                 break;
     }
-    
-}
-}
-
