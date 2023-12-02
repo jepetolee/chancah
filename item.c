@@ -38,7 +38,7 @@ int determinant=0;
    if(determinant){ return k;}
 }
 }
-void itemFunctionThree(int j){
+void itemFunctionThree(int k){
       
 }
 
