@@ -1,5 +1,6 @@
 #include "utils.h"
 
+<<<<<<< Updated upstream
 int CheckCollisionWall(Entity *object) {
 
     if (object->pos.x < 0 || object->pos.x + object->pos.w > SCREEN_WIDTH ||
@@ -41,3 +42,6 @@ int CheckCollisionObject(Entity *object_a, Item *object_b) {
         return 0;
     }
 }
+=======
+
+>>>>>>> Stashed changes
