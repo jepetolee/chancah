@@ -1,5 +1,4 @@
-#ifndef ACTION_H
-#define ACTION_H
+
 
 #include "init.h"
 #include "defs.h"
@@ -8,4 +7,4 @@
 
 void player3item(void);
 
-#endif
+

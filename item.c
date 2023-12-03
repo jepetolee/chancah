@@ -1,4 +1,4 @@
-/*아이템 정의 1번  속도 아이템 2번 크기커지기 아이템 셋째 한골넣으면 두배*/
+
 #include "item.h"
 #include <stdio.h>
 #define ITEM_WIDTH 20

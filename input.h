@@ -1,5 +1,3 @@
-#ifndef INPUT_H
-#define INPUT_H
 
 #include "init.h"
 #include "defs.h"
@@ -58,4 +56,3 @@ void ResponseKeyUp(SDL_KeyboardEvent *event);
 */
 void ResponseKeyDown(SDL_KeyboardEvent *event);
 
-#endif

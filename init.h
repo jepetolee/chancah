@@ -1,5 +1,3 @@
-#ifndef INIT_H
-#define INIT_H
 
 #include "defs.h"
 #include "utils.h"
@@ -18,4 +16,4 @@ void InitBall(void);
 void InitGameOver(void);
 void initial_value(void);
 
-#endif
+

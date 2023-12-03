@@ -3,8 +3,8 @@
 void ActGame(int i) {
     ActPlayer(i);
     if(checkitemFunctionThree()>2) ActCheckgoal();
-    gravity(i);//플레이어와 공에 작용하는 중력
-    Act();//충돌함수
+    gravity(i);
+    Act();
     itemtotal();
 
     return;
@@ -86,10 +86,6 @@ void ActPlayer(int i) {
 
     return;
 }
-
-
-
-
 
 
 void ActGameOverScreen(void) {

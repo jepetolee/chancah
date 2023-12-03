@@ -36,7 +36,6 @@ void Initfield(void) {
     return;
 }
 void InitPlayer1(void) {
-//플레이어1이 캐릭터1 골랐을때
     player[0].texture = IMG_LoadTexture(app.renderer, "./gfx/ch1.png");
     player[0].pos.x = 125;
     player[0].pos.y = 480;
@@ -45,7 +44,6 @@ void InitPlayer1(void) {
 
     return;}
 void InitPlayer1_1(void) {
-//플레이어2가 캐릭터1 골랐을때
     player[0].texture = IMG_LoadTexture(app.renderer, "./gfx/ch1-1.png");
     player[0].pos.x = 515;
     player[0].pos.y = 480;

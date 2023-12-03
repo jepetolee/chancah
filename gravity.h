@@ -1,11 +1,10 @@
-#ifndef ACTION_H
-#define ACTION_H
-
+#pragma once
 #include "init.h"
 #include "defs.h"
 #include "utils.h"
 void gravity(int i);
 
-extern Entity BALL;
-
-#endif
+void gravity(int i){
+    BALL.v_y-=BALL.v_y-5;
+    player[i].v_y=-5;
+}

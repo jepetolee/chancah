@@ -1,5 +1,6 @@
-#include "main.h"
 
+#include "defs.h"
+#include "init.h"
 int main(void) {
     int tmpcnt = 0;
 
