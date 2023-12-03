@@ -2,7 +2,6 @@
 
 #include "defs.h"
 
-/* main.h에 정의된 전역 변수 사용 */
 
 
 
@@ -47,4 +46,3 @@ int CheckCollisionObject(Entity *object_a, Item *object_b) {
         return 0;
     }
 }
-

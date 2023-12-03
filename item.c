@@ -6,17 +6,16 @@
 #define ITEM_COUNT 3
 int checkitemFunctionOne(){
    int determinant1=0;
-   for (int i=0;i<BUFSIZE;i++){
+   for (int i=0;i<BUFSIZE2;i++){
    determinant1=CheckCollisionObject(&player[i],&items[0]);
    if(determinant1){ return i;}
-
 }
 }
 
 
 void itemFunctionOne(int i){
-      player[i].v_x*=2;
-      player[i].v_y*=2;
+      player[i].v_x+=(PLAYER_SPEED*2);
+      player[i].v_y+=(PLAYER_SPEED*2);
 }
 
 int checkitemFunctionTwo(){
@@ -28,18 +27,18 @@ int checkitemFunctionTwo(){
 }
 
 void itemFunctionTwo(int j){
-      player[j].pos.x+player_width*1.2;
-      player[j].pos.y+player_Height*1.2;
+      player[j].pos.x+player[j].pos.w*1.2;
+      player[j].pos.y+player[j].pos.h*1.2;
 }
 int checkitemFunctionThree(){
 int determinant=0;
-   for (int k=0;k<BUFSIZE;k++){
+   for (int k=0;k<4;k++){
    determinant=CheckCollisionObject(& player[k],&items[1]);
    if(determinant){ return k;}
 }
 }
-void itemFunctionThree(int j){
-      
+void itemFunctionThree(int k){
+   score+=2;         
 }
 
 
@@ -51,9 +50,9 @@ void initializeItem(){
 }
 
 
-int main(){
+void itemtotal(){
    int i=rand()%640;
-   int j=rand()%410;
+   int j=(380+rand()%100);
    void initializeItem();
    int randomItemNumber = rand()%3;
    

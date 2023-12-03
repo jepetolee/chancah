@@ -4,6 +4,7 @@
 #include "defs.h"
 #include "utils.h"
 
+
 void player1speed(void){
     player[0].v_x*=1.2;
     player[0].v_y*=1.2;

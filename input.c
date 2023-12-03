@@ -3,18 +3,18 @@
 void GetInput(void) {
     SDL_Event event;
 
-    /*SDL_PollEvent() í•¨ìˆ˜ëŠ” ì´ë²¤íŠ¸ íì— ë‚¨ì•„ ìˆëŠ” ì´ë²¤íŠ¸ë¥¼ ê°€ì ¸ì˜´*/
+    /*SDL_PollEvent() ÇÔ¼ö´Â ÀÌº¥Æ® Å¥¿¡ ³²¾Æ ÀÖ´Â ÀÌº¥Æ®¸¦ °¡Á®¿È*/
     while (SDL_PollEvent(&event)) {
         switch (event.type) {
-            /*ì°½ë‹«ê¸° ë²„íŠ¼ì„ ëˆ„ë¥¸ ê²½ìš°*/
+            /*Ã¢´İ±â ¹öÆ°À» ´©¸¥ °æ¿ì*/
             case SDL_QUIT:
                 QuitSDL(0);
                 break;
-            /*í‚¤ë³´ë“œ ë²„íŠ¼ì„ ë—ì„ ê²½ìš°*/
+            /*Å°º¸µå ¹öÆ°À» ¶ÃÀ» °æ¿ì*/
             case SDL_KEYUP:
                 ResponseKeyUp(&event.key);
                 break;
-            /*í‚¤ë³´ë“œ ë²„íŠ¼ì„ ëˆŒë €ì„ ê²½ìš°*/
+            /*Å°º¸µå ¹öÆ°À» ´­·¶À» °æ¿ì*/
             case SDL_KEYDOWN:
                 ResponseKeyDown(&event.key);
                 break;

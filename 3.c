@@ -80,11 +80,13 @@ int main() {
                 } 
             } 
         } 
+
         SDL_SetRenderDrawColor(renderer, backgroundColor.r, backgroundColor.g, backgroundColor.b, 255); 
         SDL_RenderClear(renderer);
 
         switch (currentState) {
             case INITIAL:
+
                 //SDL_Rect initialRect;
                 //initialRect.x = WINDOW_WIDTH / 4;
                 //initialRect.y = WINDOW_HEIGHT / 4;

@@ -3,8 +3,8 @@
 void ActGame(int i) {
     ActPlayer(i);
     if(checkitemFunctionThree()>2) ActCheckgoal();
-    gravity(i);//ÇÃ·¹ÀÌ¾î¿Í °ø¿¡ ÀÛ¿ëÇÏ´Â Áß·Â
-    Act();//Ãæµ¹ÇÔ¼ö
+    gravity(i);//í”Œë ˆì´ì–´ì™€ ê³µì— ì‘ìš©í•˜ëŠ” ì¤‘ë ¥
+    Act();//ì¶©ëŒí•¨ìˆ˜
     itemtotal();
 
     return;
@@ -13,6 +13,7 @@ void ActGame(int i) {
 void ActGameOver(void) {
     ActFinalScoreBoard();
     ActGameOverScreen();
+
     return;
 }
 
