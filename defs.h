@@ -1,104 +1,120 @@
-#ifndef DEFS_H
-#define DEFS_H
+#pragma once
 
-#include "collision.h"
-#include "ctype.h"
-#include "math.h"
-#include "stdio.h"
-#include "stdlib.h"
-#include "string.h"
-#include "time.h"
+#include <ctype.h>
+#include <math.h>
+#include <stdio.h>
+
+#include <stdlib.h>
+#include <string.h>
+#include <time.h>
 
 #include "SDL2/SDL.h"
 #include "SDL2/SDL_image.h"
 #include "SDL2/SDL_ttf.h"
 #include "SDL2/SDL_mixer.h"
 
-/*ìƒìˆ˜ ë§¤í¬ë¡œ ì •ì˜*/
-#define FPS 60              /**< ê²Œì„ FPS*/
-#define BUFSIZE 3        /**< ë¬¸ìì—´ ë²„í¼ í¬ê¸°*/
+/*»ó¼ö ¸ÅÅ©·Î Á¤ÀÇ*/
+#define FPS 60              /**< °ÔÀÓ FPS*/
+#define BUFSIZE 3        /**< ¹®ÀÚ¿­ ¹öÆÛ Å©±â*/
 #define field_height 410
 #define field_width 640
-#define SCREEN_WIDTH 640    /**< í™”ë©´ ë„ˆë¹„(í”½ì…€)*/
-#define SCREEN_HEIGHT 480   /**< í™”ë©´ ë†’ì´(í”½ì…€)*/
+#define SCREEN_WIDTH 640    /**< È­¸é ³Êºñ(ÇÈ¼¿)*/
+#define SCREEN_HEIGHT 480   /**< È­¸é ³ôÀÌ(ÇÈ¼¿)*/
 #define Goal_net_width 120
 #define Goal_net_height 150
 #define ITEM_WIDTH 20
 #define ITEM_HEIGHT 20
 #define player_width 85
 #define player_Height 90
-#define PLAYER_SPEED 4      /**< í”Œë ˆì´ì–´ ê°ì²´ ì†ë„(ë‹¨ìœ„ì‹œê°„ë‹¹ ì´ë™ëŸ‰)*/
+#define PLAYER_SPEED 4      /**< ÇÃ·¹ÀÌ¾î °´Ã¼ ¼Óµµ(´ÜÀ§½Ã°£´ç ÀÌµ¿·®)*/
 #define BALL_width 10
 #define BALL_height 10
-#define BALL_SPEED 6      /**<  ê³µ ê°ì²´ ì†ë„(ë‹¨ìœ„ì‹œê°„ë‹¹ ì´ë™ëŸ‰)*/
-#define PLAYER_BALL 2      /**< í”Œë ˆì´ì–´ ì „ì²´ ê°¯ìˆ˜*/
+#define BALL_SPEED 6      /**<  °ø °´Ã¼ ¼Óµµ(´ÜÀ§½Ã°£´ç ÀÌµ¿·®)*/
+#define PLAYER_BALL 2      /**< ÇÃ·¹ÀÌ¾î ÀüÃ¼ °¹¼ö*/
 
-#define FONTSIZE 20         /**< ì¶œë ¥í•  ë¬¸ìì—´ í°íŠ¸ í¬ê¸°*/
+#define FONTSIZE 20         /**< Ãâ·ÂÇÒ ¹®ÀÚ¿­ ÆùÆ® Å©±â*/
 
-#define LEFT_WALL 1         /**< ì¶©ëŒ íŒì • ì‹œ ì™¼ìª½ ë²½ì„ ë‚˜íƒ€ë‚´ëŠ” ìƒìˆ˜*/
-#define RIGHT_WALL 2        /**< ì¶©ëŒ íŒì • ì‹œ ì˜¤ë¥¸ìª½ ë²½ì„ ë‚˜íƒ€ë‚´ëŠ” ìƒìˆ˜*/
-#define TOP_WALL 3          /**< ì¶©ëŒ íŒì • ì‹œ ìœ„ìª½ ë²½ì„ ë‚˜íƒ€ë‚´ëŠ” ìƒìˆ˜*/
-#define BOTTOM_WALL 4       /**< ì¶©ëŒ íŒì • ì‹œ ì•„ë˜ìª½ ë²½ì„ ë‚˜íƒ€ë‚´ëŠ” ìƒìˆ˜*/
+#define LEFT_WALL 1         /**< Ãæµ¹ ÆÇÁ¤ ½Ã ¿ŞÂÊ º®À» ³ªÅ¸³»´Â »ó¼ö*/
+#define RIGHT_WALL 2        /**< Ãæµ¹ ÆÇÁ¤ ½Ã ¿À¸¥ÂÊ º®À» ³ªÅ¸³»´Â »ó¼ö*/
+#define TOP_WALL 3          /**< Ãæµ¹ ÆÇÁ¤ ½Ã À§ÂÊ º®À» ³ªÅ¸³»´Â »ó¼ö*/
+#define BOTTOM_WALL 4       /**< Ãæµ¹ ÆÇÁ¤ ½Ã ¾Æ·¡ÂÊ º®À» ³ªÅ¸³»´Â »ó¼ö*/
 #define ITEM_WIDTH 20
 #define ITEM_HEIGHT 20
 
 
-/*êµ¬ì¡°ì²´ ì •ì˜*/
+/*±¸Á¶Ã¼ Á¤ÀÇ*/
 /**
- @brief  App: í”„ë¡œê·¸ë¨ ì „ì²´ì ìœ¼ë¡œ ê´€ë¦¬í•´ì•¼ í•˜ëŠ” ìš”ì†Œë¥¼ ëª¨ì•„ ë†“ì€ êµ¬ì¡°ì²´
+ @brief  App: ÇÁ·Î±×·¥ ÀüÃ¼ÀûÀ¸·Î °ü¸®ÇØ¾ß ÇÏ´Â ¿ä¼Ò¸¦ ¸ğ¾Æ ³õÀº ±¸Á¶Ã¼
 */
-typedef struct {
-    SDL_Renderer *renderer; /**< ë Œë”ë§ ê´€ë¦¬ë¥¼ ìœ„í•œ êµ¬ì¡°ì²´*/
-    SDL_Window *window;     /**< ì°½ ê´€ë¦¬ë¥¼ ìœ„í•œ êµ¬ì¡°ì²´*/
-    TTF_Font *font;         /**< í°íŠ¸ ê´€ë¦¬ë¥¼ ìœ„í•œ êµ¬ì¡°ì²´*/
-    int key_up;             /**< ìœ„ ë°©í–¥í‚¤ê°€ ëˆŒë¦° ìƒíƒœë¥¼ ì €ì¥í•˜ëŠ” ë³€ìˆ˜*/
-    int key_down;           /**< ì•„ë˜ ë°©í–¥í‚¤ê°€ ëˆŒë¦° ìƒíƒœë¥¼ ì €ì¥í•˜ëŠ” ë³€ìˆ˜*/
-    int key_left;           /**< ì™¼ìª½ ë°©í–¥í‚¤ê°€ ëˆŒë¦° ìƒíƒœë¥¼ ì €ì¥í•˜ëŠ” ë³€ìˆ˜*/
-    int key_right;          /**< ì˜¤ë¥¸ìª½ ë°©í–¥í‚¤ê°€ ëˆŒë¦° ìƒíƒœë¥¼ ì €ì¥í•˜ëŠ” ë³€ìˆ˜*/
-    int key_r;              /**< Rí‚¤ê°€ ëˆŒë¦° ìƒíƒœë¥¼ ì €ì¥í•˜ëŠ” ë³€ìˆ˜*/
+typedef struct App{
+    SDL_Renderer *renderer; /**< ·»´õ¸µ °ü¸®¸¦ À§ÇÑ ±¸Á¶Ã¼*/
+    SDL_Window *window;     /**< Ã¢ °ü¸®¸¦ À§ÇÑ ±¸Á¶Ã¼*/
+    TTF_Font *font;         /**< ÆùÆ® °ü¸®¸¦ À§ÇÑ ±¸Á¶Ã¼*/
+    int key_up;             /**< À§ ¹æÇâÅ°°¡ ´­¸° »óÅÂ¸¦ ÀúÀåÇÏ´Â º¯¼ö*/
+    int key_down;           /**< ¾Æ·¡ ¹æÇâÅ°°¡ ´­¸° »óÅÂ¸¦ ÀúÀåÇÏ´Â º¯¼ö*/
+    int key_left;           /**< ¿ŞÂÊ ¹æÇâÅ°°¡ ´­¸° »óÅÂ¸¦ ÀúÀåÇÏ´Â º¯¼ö*/
+    int key_right;          /**< ¿À¸¥ÂÊ ¹æÇâÅ°°¡ ´­¸° »óÅÂ¸¦ ÀúÀåÇÏ´Â º¯¼ö*/
+    int key_r;              /**< RÅ°°¡ ´­¸° »óÅÂ¸¦ ÀúÀåÇÏ´Â º¯¼ö*/
 } App;
-// êµ¬ì¡°ì²´ ì •ì˜: 2ì°¨ì› ë²¡í„°
-typedef struct {
+// ±¸Á¶Ã¼ Á¤ÀÇ: 2Â÷¿ø º¤ÅÍ
+typedef struct Vector2D{
     float x;
     float y;
 } Vector2D;
 
-// êµ¬ì¡°ì²´ ì •ì˜: ë¬¼ì²´
-typedef struct {
+// ±¸Á¶Ã¼ Á¤ÀÇ: ¹°Ã¼
+typedef struct Object{
     float mass;
     Vector2D velocity;
 } Object;
-typedef struct{ 
+
+typedef struct Item{ 
    void (*itemFunc)();
    SDL_Rect pos;
    Uint32 startTime;
    SDL_bool isActive;
-}Item;
+}Item ;
 
 /**
- @brief  Entity: ê²Œì„ ë‚´ì—ì„œ ì›€ì§ì´ëŠ” ë¬¼ì²´ë¥¼ êµ¬í˜„í•˜ê¸° ìœ„í•œ êµ¬ì¡°ì²´(ì£¼ì¸ê³µ, ì´ì•Œ)
+ @brief  Entity: °ÔÀÓ ³»¿¡¼­ ¿òÁ÷ÀÌ´Â ¹°Ã¼¸¦ ±¸ÇöÇÏ±â À§ÇÑ ±¸Á¶Ã¼(ÁÖÀÎ°ø, ÃÑ¾Ë)
 */
-typedef struct {
-    SDL_Rect pos;            /**< ì§ì‚¬ê°í˜• ê°ì²´ì˜ ìƒíƒœë¥¼ ë‚˜íƒ€ë‚´ê¸° ìœ„í•œ êµ¬ì¡°ì²´
-                                ì—¬ê¸°ì— ê°ì²´ì˜ ì¢Œí‘œ, ìœ„ì¹˜ ì €ì¥*/
+typedef struct Entity{
+    SDL_Rect pos;            /**< Á÷»ç°¢Çü °´Ã¼ÀÇ »óÅÂ¸¦ ³ªÅ¸³»±â À§ÇÑ ±¸Á¶Ã¼
+                                ¿©±â¿¡ °´Ã¼ÀÇ ÁÂÇ¥, À§Ä¡ ÀúÀå*/
     float mass;
     unsigned startTime;   
-    double theta;           /**< ì´ì•Œ-ì£¼ì¸ê³µ ê°„ ê°ë„ë¥¼ ì €ì¥í•˜ëŠ” ë³€ìˆ˜*/
-    double v_x;             /**< ì´ì•Œ-ì£¼ì¸ê³µ ê°„ xë°©í–¥ ì†ë„ë²¡í„°*/
-    double v_y;             /**< ì´ì•Œ-ì£¼ì¸ê³µ ê°„ yë°©í–¥ ì†ë„ë²¡í„°*/
-    SDL_Texture *texture;   /**< í…ìŠ¤ì³ë¥¼ ë‹´ê³  ìˆëŠ” êµ¬ì¡°ì²´ (ê·¸ë¦¼íŒŒì¼ì„ ì—´ì–´
-                                 í…ìŠ¤ì³ì— ì €ì¥)*/
-} Entity;
+    double theta;           /**< ÃÑ¾Ë-ÁÖÀÎ°ø °£ °¢µµ¸¦ ÀúÀåÇÏ´Â º¯¼ö*/
+    double v_x;             /**< ÃÑ¾Ë-ÁÖÀÎ°ø °£ x¹æÇâ ¼Óµµº¤ÅÍ*/
+    double v_y;             /**< ÃÑ¾Ë-ÁÖÀÎ°ø °£ y¹æÇâ ¼Óµµº¤ÅÍ*/
+    SDL_Texture *texture;   /**< ÅØ½ºÃÄ¸¦ ´ã°í ÀÖ´Â ±¸Á¶Ã¼ (±×¸²ÆÄÀÏÀ» ¿­¾î
+                                 ÅØ½ºÃÄ¿¡ ÀúÀå)*/
+}Entity;
 
 /**
- @brief  Text: ê²Œì„ ë‚´ì— ë¬¸ìì—´ì„ í‘œì‹œí•  ê²½ìš° ë¬¸ìì—´ì„ ë‚˜íƒ€ë‚´ëŠ” êµ¬ì¡°ì²´(ìŠ¤ì½”ì–´ë³´ë“œ)
+ @brief  Text: °ÔÀÓ ³»¿¡ ¹®ÀÚ¿­À» Ç¥½ÃÇÒ °æ¿ì ¹®ÀÚ¿­À» ³ªÅ¸³»´Â ±¸Á¶Ã¼(½ºÄÚ¾îº¸µå)
 */
-typedef struct {
+typedef struct Text{
     SDL_Rect pos;  
-    SDL_Color color;        /**< ê¸€ì”¨ ìƒ‰ê¹”ì„ ì €ì¥í•˜ëŠ” êµ¬ì¡°ì²´*/
-    SDL_Surface *surface;   /**< í°íŠ¸ ë Œë”ë§ì„ ìœ„í•´ í•„ìš”í•œ êµ¬ì¡°ì²´*/
-    SDL_Texture *texture;   /**< í…ìŠ¤ì³ë¥¼ ë‹´ê³  ìˆëŠ” êµ¬ì¡°ì²´ (ë¬¸ìì—´ì„ surfaceë¡œ ë§Œë“¤ê³ ,
-                                ê·¸ í›„ textureì— ì €ì¥)*/
+    SDL_Color color;        /**< ±Û¾¾ »ö±òÀ» ÀúÀåÇÏ´Â ±¸Á¶Ã¼*/
+    SDL_Surface *surface;   /**< ÆùÆ® ·»´õ¸µÀ» À§ÇØ ÇÊ¿äÇÑ ±¸Á¶Ã¼*/
+    SDL_Texture *texture;   /**< ÅØ½ºÃÄ¸¦ ´ã°í ÀÖ´Â ±¸Á¶Ã¼ (¹®ÀÚ¿­À» surface·Î ¸¸µé°í,
+                                ±× ÈÄ texture¿¡ ÀúÀå)*/
 } Text;
 
-#endif
+App app;
+
+Text score_board;
+int score;
+
+Mix_Music *bgm;
+Mix_Chunk *death_effect;
+
+Entity player[3];
+Entity game_over;
+Entity BALL;
+Entity field;
+Entity LGoalnet;
+Entity RGoalnet;
+ 
+Item items[2]; 
+

@@ -19,9 +19,9 @@ Color getRandomColor() {
 }
 
 enum ScreenState {
-    INITIAL, // 처음 화면
-    FOUR_RECTS, // 선택창
-    NO_RECTS, // 게임화면
+    INITIAL, 
+    FOUR_RECTS, 
+    NO_RECTS, 
 };
 
 int main() {
@@ -80,14 +80,11 @@ int main() {
                 } 
             } 
         } 
-        // 화면 색 설정 
         SDL_SetRenderDrawColor(renderer, backgroundColor.r, backgroundColor.g, backgroundColor.b, 255); 
         SDL_RenderClear(renderer);
 
-        // 화면들
         switch (currentState) {
             case INITIAL:
-                // 처음 화면
                 //SDL_Rect initialRect;
                 //initialRect.x = WINDOW_WIDTH / 4;
                 //initialRect.y = WINDOW_HEIGHT / 4;
@@ -97,7 +94,6 @@ int main() {
                 //SDL_RenderDrawRect(renderer, &initialRect);
                 break;
             case FOUR_RECTS:
-                // 선택창
                 for (int i = 0;i<4;++i) {
                     SDL_Rect rect;
                     rect.x = 0;
@@ -109,7 +105,6 @@ int main() {
                 }
                 break;
             case NO_RECTS:
-                // 게임 화면
                 SDL_RenderDrawLine(renderer, 50,200,50,400);
                 SDL_RenderDrawLine(renderer, 600,200,600,400);
                 break;
